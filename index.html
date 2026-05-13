@@ -307,8 +307,8 @@ footer{
       </p>
 
       <div class="meta">
-        <span>⭐ 4.7 Instructor Rating</span>
-        <span>👨‍💻 12,000+ Students</span>
+        <span>⭐ 4.5 Instructor Rating</span>
+        <span>👨‍💻 23,000+ Students</span>
         <span>⏱ 8+ Hours</span>
         <span>📘 Beginner → Advanced</span>
       </div>
@@ -318,13 +318,13 @@ footer{
     <div class="card">
 
       <div class="card-header">
-        <h2>Course Preview</h2>
+        <h2><img height="200px" width="300px" src="logo.png"></img></h2>
         <p>Start your Tomcat journey today</p>
       </div>
 
       <div class="card-body">
 
-        <div class="price">₹499 / $5.99</div>
+        
         <div class="small">Limited-time learning access</div>
 
         <a class="card-btn primary"
@@ -390,33 +390,221 @@ footer{
   <div class="container">
 
     <div class="section-title">Course Content</div>
+<div class="course-curriculum">
+  <style>
+    .course-curriculum {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: auto;
+      color: #222;
+    }
 
-    <div class="module">
-      <div class="module-header">Module 1: Tomcat Fundamentals</div>
-      <div class="module-content">
-        Architecture, servlet container, directory structure, lifecycle, first deployment.
-      </div>
-    </div>
+    .course-curriculum h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #b30000;
+    }
 
-    <div class="module">
-      <div class="module-header">Module 2: Installation & Setup</div>
-      <div class="module-content">
-        Install Java, setup Tomcat on Linux/Windows, configure server.xml, deploy apps.
-      </div>
-    </div>
+    .module {
+      background: #f8f8f8;
+      border-left: 5px solid #b30000;
+      margin-bottom: 20px;
+      padding: 15px 20px;
+      border-radius: 8px;
+      transition: 0.3s ease;
+    }
 
-    <div class="module">
-      <div class="module-header">Module 3: Security & SSL</div>
-      <div class="module-content">
-        HTTPS setup, certificates, keystores, secure admin panel, production hardening.
-      </div>
-    </div>
+    .module:hover {
+      background: #f1f1f1;
+      transform: translateY(-2px);
+    }
 
-    <div class="module">
-      <div class="module-header">Module 4: Clustering & Scaling</div>
-      <div class="module-content">
-        Load balancing, sticky sessions, Apache/Nginx integration, high availability.
-      </div>
+    .module h3 {
+      margin-top: 0;
+      color: #111;
+      font-size: 20px;
+    }
+
+    .module ul {
+      margin: 10px 0 0;
+      padding-left: 20px;
+    }
+
+    .module ul li {
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+  </style>
+
+  <h2>Complete Curriculum List</h2>
+
+  <div class="module">
+    <h3>1. Overview of Tomcat</h3>
+    <ul>
+      <li>What we are going to cover?</li>
+      <li>Overview of Servlet Container</li>
+    </ul>
+  </div>
+
+  <div class="module">
+    <h3>2. Setting up Webserver on Multiple Platforms</h3>
+    <ul>
+      <li>Setup Requirements & Installation – Windows Platform</li>
+      <li>Setup Requirements & Installation – Linux Platform</li>
+    </ul>
+  </div>
+
+  <div class="module">
+    <h3>3. Application Deployment and Binaries Walkthrough</h3>
+    <ul>
+      <li>Application Deployment</li>
+      <li>Configuration files and binaries walkthrough</li>
+    </ul>
+  </div>
+
+  <div class="module">
+    <h3>4. Tomcat Security and SSL Configuration</h3>
+    <ul>
+      <li>Security Overview</li>
+      <li>Enabling SSL – Generating Certificate</li>
+      <li>Enabling SSL – Part 2</li>
+      <li>Enabling SSL – Linux Platform</li>
+    </ul>
+  </div>
+
+  <div class="module">
+    <h3>5. Virtual Hosts in Shared Web-Hosting Environment</h3>
+    <ul>
+      <li>Virtual Host Overview</li>
+      <li>Virtual Host Creation – Windows Platform</li>
+      <li>Virtual Host Creation – Linux Platform</li>
+    </ul>
+  </div>
+
+  <div class="module">
+    <h3>6. High-Availability Clustering</h3>
+    <ul>
+      <li>Scaling Traffic & High Availability using clustering</li>
+      <li>Cluster Setup – Windows</li>
+      <li>Cluster Setup – Linux Platform</li>
+    </ul>
+  </div>
+
+  <div class="module">
+    <h3>7. Load Balancing Tomcat with Nginx</h3>
+    <ul>
+      <li>Load balancing using Nginx in Vertical Cluster – Windows</li>
+      <li>Load balancing using Nginx in Horizontal Cluster – Windows</li>
+      <li>Load balancing Tomcat using Nginx – Linux</li>
+    </ul>
+  </div>
+
+  <div class="module">
+    <h3>8. Load Balancing Tomcat with Apache HTTP Server & MOD_JK</h3>
+    <ul>
+      <li>Setting up Apache and Mod_JK Connector</li>
+      <li>Distributing Traffic with Apache LB – Part 1</li>
+      <li>Distributing Traffic with Apache LB – Part 2</li>
+    </ul>
+  </div>
+
+  <div class="module">
+    <h3>9. Session Management in Cluster</h3>
+    <ul>
+      <li>Sticky Sessions – Concept</li>
+      <li>Configuring Sticky Sessions on Nginx & Apache LB</li>
+      <li>Session Replication – Concept</li>
+      <li>Configuring Session Replication</li>
+    </ul>
+  </div>
+
+  <div class="module">
+    <h3>10. JNDI & JDBC Connection Pooling</h3>
+    <ul>
+      <li>Understanding JNDI – Concept</li>
+      <li>Understanding Connection Pooling</li>
+      <li>Creating JNDI and JDBC Connection Pooling – Example</li>
+    </ul>
+  </div>
+
+  <div class="module">
+    <h3>11. Logging and Monitoring</h3>
+    <ul>
+      <li>Tomcat Logging Concepts</li>
+      <li>Log File Customization</li>
+      <li>Monitoring Threads and JVM</li>
+      <li>Using JVisualVM</li>
+    </ul>
+  </div>
+
+  <div class="module">
+    <h3>12. Performance Tuning & Heap Management</h3>
+    <ul>
+      <li>JVM Heap Concepts</li>
+      <li>Heap Management</li>
+      <li>Garbage Collection Tuning</li>
+      <li>Memory Leak Troubleshooting</li>
+      <li>Thread Pool Optimization</li>
+    </ul>
+  </div>
+
+  <div class="module">
+    <h3>13. Production Deployment Concepts</h3>
+    <ul>
+      <li>WAR Packaging</li>
+      <li>Production Deployment Strategy</li>
+      <li>Context Management</li>
+      <li>Production Best Practices</li>
+    </ul>
+  </div>
+
+  <div class="module">
+    <h3>14. Valves and Request Interception</h3>
+    <ul>
+      <li>Valve Overview</li>
+      <li>Intercepting Requests at Different Layers</li>
+      <li>Access Logging</li>
+      <li>Security Filters</li>
+    </ul>
+  </div>
+
+  <div class="module">
+    <h3>15. Error Handling and Custom Pages</h3>
+    <ul>
+      <li>Setting Custom Error Pages</li>
+      <li>Exception Handling Strategy</li>
+      <li>Friendly Error Responses</li>
+    </ul>
+  </div>
+
+  <div class="module">
+    <h3>16. Cloud Deployment</h3>
+    <ul>
+      <li>Running Tomcat on AWS</li>
+      <li>Running Tomcat on Google Cloud</li>
+      <li>Cloud Deployment Concepts</li>
+    </ul>
+  </div>
+
+  <div class="module">
+    <h3>17. Interview Preparation</h3>
+    <ul>
+      <li>Frequently Asked Interview Questions</li>
+      <li>Troubleshooting Scenarios</li>
+      <li>Production Issue Analysis</li>
+    </ul>
+  </div>
+
+  <div class="module">
+    <h3>18. Advanced Concepts & Supplementary Lectures</h3>
+    <ul>
+      <li>Additional Production Configurations</li>
+      <li>Middleware Administration Tips</li>
+      <li>Bonus Practical Scenarios</li>
+    </ul>
+  </div>
+
+</div>
     </div>
 
   </div>
