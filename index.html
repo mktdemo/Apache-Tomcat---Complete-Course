@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Apache Tomcat Server from Beginners to Advanced</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:#f6f7fb;
+  color:#1c1d1f;
+}
+
+/* TOP BAR */
+.topbar{
+  background:#1c1d1f;
+  color:white;
+  padding:14px 0;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.container{
+  width:92%;
+  max-width:1200px;
+  margin:auto;
+}
+
+.topbar-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-weight:800;
+  font-size:18px;
+}
+
+.cta-btn{
+  background:#a435f0;
+  color:white;
+  padding:10px 18px;
+  border-radius:6px;
+  font-weight:600;
+  text-decoration:none;
+}
+
+.cta-btn:hover{
+  background:#8710d8;
+}
+
+/* HERO */
+.hero{
+  background:#1c1d1f;
+  color:white;
+  padding:70px 0;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.4fr .6fr;
+  gap:40px;
+}
+
+.badge{
+  background:#f3ca8c;
+  color:#1c1d1f;
+  display:inline-block;
+  padding:6px 12px;
+  border-radius:999px;
+  font-weight:700;
+  font-size:12px;
+  margin-bottom:18px;
+}
+
+h1{
+  font-size:44px;
+  line-height:1.2;
+  margin-bottom:15px;
+}
+
+.subtitle{
+  color:#d1d2e0;
+  font-size:18px;
+  margin-bottom:25px;
+}
+
+.meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:15px;
+  font-size:14px;
+  color:#cfcfd6;
+}
+
+/* SIDEBAR */
+.card{
+  background:white;
+  border-radius:12px;
+  overflow:hidden;
+  color:#1c1d1f;
+  box-shadow:0 10px 30px rgba(0,0,0,0.25);
+  position:sticky;
+  top:90px;
+}
+
+.card-header{
+  background:linear-gradient(135deg,#a435f0,#5b2be0);
+  color:white;
+  padding:30px;
+  text-align:center;
+}
+
+.card-body{
+  padding:20px;
+}
+
+.price{
+  font-size:32px;
+  font-weight:800;
+  margin-bottom:10px;
+}
+
+.small{
+  font-size:14px;
+  color:#6a6f73;
+  margin-bottom:15px;
+}
+
+.card-btn{
+  display:block;
+  text-align:center;
+  padding:14px;
+  border-radius:8px;
+  font-weight:700;
+  margin-top:10px;
+  text-decoration:none;
+}
+
+.primary{
+  background:#a435f0;
+  color:white;
+}
+
+.primary:hover{
+  background:#8710d8;
+}
+
+.secondary{
+  border:1px solid #d1d2e0;
+  color:#1c1d1f;
+}
+
+/* SECTIONS */
+section{
+  padding:60px 0;
+}
+
+.section-title{
+  font-size:28px;
+  margin-bottom:25px;
+  font-weight:800;
+}
+
+/* WHAT YOU LEARN */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+}
+
+.box{
+  background:white;
+  padding:18px;
+  border-radius:10px;
+  border:1px solid #e6e7ec;
+}
+
+.box h3{
+  color:#5624d0;
+  margin-bottom:10px;
+}
+
+/* CURRICULUM */
+.module{
+  background:white;
+  margin-bottom:12px;
+  border-radius:10px;
+  border:1px solid #e6e7ec;
+  overflow:hidden;
+}
+
+.module-header{
+  padding:18px;
+  background:#f7f7f9;
+  font-weight:700;
+}
+
+.module-content{
+  padding:18px;
+  color:#6a6f73;
+}
+
+/* REVIEWS */
+.reviews{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.review{
+  background:white;
+  padding:20px;
+  border-radius:10px;
+  border:1px solid #e6e7ec;
+}
+
+/* CTA */
+.cta{
+  background:#1c1d1f;
+  color:white;
+  padding:70px 20px;
+  text-align:center;
+  border-radius:14px;
+}
+
+.cta h2{
+  font-size:34px;
+  margin-bottom:15px;
+}
+
+.cta a{
+  display:inline-block;
+  margin-top:20px;
+  background:#a435f0;
+  color:white;
+  padding:14px 26px;
+  border-radius:8px;
+  font-weight:700;
+  text-decoration:none;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  color:#6a6f73;
+  font-size:14px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero-grid{
+    grid-template-columns:1fr;
+  }
+
+  h1{
+    font-size:34px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="container topbar-inner">
+    <div class="logo">
+      Apache Tomcat Server from Beginners to Advanced
+    </div>
+
+    <a class="cta-btn"
+       href="https://www.udemy.com/course/apache-tomcat-for-beginners-and-advanced/"
+       target="_blank">
+      Take this Course on Udemy
+    </a>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container hero-grid">
+
+    <div>
+      <div class="badge">Bestseller Course</div>
+
+      <h1>Learn Apache Tomcat Server from Beginner to Advanced Level</h1>
+
+      <p class="subtitle">
+        Master real-world Apache Tomcat administration including deployment,
+        SSL configuration, clustering, load balancing, performance tuning,
+        troubleshooting, and production-ready DevOps practices.
+      </p>
+
+      <div class="meta">
+        <span>⭐ 4.7 Instructor Rating</span>
+        <span>👨‍💻 12,000+ Students</span>
+        <span>⏱ 8+ Hours</span>
+        <span>📘 Beginner → Advanced</span>
+      </div>
+    </div>
+
+    <!-- CARD -->
+    <div class="card">
+
+      <div class="card-header">
+        <h2>Course Preview</h2>
+        <p>Start your Tomcat journey today</p>
+      </div>
+
+      <div class="card-body">
+
+        <div class="price">₹499 / $5.99</div>
+        <div class="small">Limited-time learning access</div>
+
+        <a class="card-btn primary"
+           href="https://www.udemy.com/course/apache-tomcat-for-beginners-and-advanced/"
+           target="_blank">
+          Enroll on Udemy
+        </a>
+
+        <a class="card-btn secondary" href="#curriculum">
+          View Curriculum
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- WHAT YOU LEARN -->
+<section>
+  <div class="container">
+
+    <div class="section-title">What You Will Learn</div>
+
+    <div class="grid">
+
+      <div class="box">
+        <h3>Tomcat Architecture</h3>
+        Understand Catalina engine, connectors, servlets, and request lifecycle.
+      </div>
+
+      <div class="box">
+        <h3>Deployment Mastery</h3>
+        Deploy WAR applications, configure hosts, contexts, and production setup.
+      </div>
+
+      <div class="box">
+        <h3>SSL & Security</h3>
+        Configure HTTPS, certificates, keystores, and secure production servers.
+      </div>
+
+      <div class="box">
+        <h3>Performance Tuning</h3>
+        Optimize JVM, threads, memory, and handle production workloads.
+      </div>
+
+      <div class="box">
+        <h3>Load Balancing</h3>
+        Use Nginx/Apache with Tomcat clustering and session replication.
+      </div>
+
+      <div class="box">
+        <h3>Real Troubleshooting</h3>
+        Fix memory leaks, logs, startup errors, and production issues.
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CURRICULUM -->
+<section id="curriculum">
+  <div class="container">
+
+    <div class="section-title">Course Content</div>
+
+    <div class="module">
+      <div class="module-header">Module 1: Tomcat Fundamentals</div>
+      <div class="module-content">
+        Architecture, servlet container, directory structure, lifecycle, first deployment.
+      </div>
+    </div>
+
+    <div class="module">
+      <div class="module-header">Module 2: Installation & Setup</div>
+      <div class="module-content">
+        Install Java, setup Tomcat on Linux/Windows, configure server.xml, deploy apps.
+      </div>
+    </div>
+
+    <div class="module">
+      <div class="module-header">Module 3: Security & SSL</div>
+      <div class="module-content">
+        HTTPS setup, certificates, keystores, secure admin panel, production hardening.
+      </div>
+    </div>
+
+    <div class="module">
+      <div class="module-header">Module 4: Clustering & Scaling</div>
+      <div class="module-content">
+        Load balancing, sticky sessions, Apache/Nginx integration, high availability.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section>
+  <div class="container">
+
+    <div class="section-title">Student Feedback</div>
+
+    <div class="reviews">
+
+      <div class="review">
+        “Very practical course. I used these skills directly in production servers.”
+      </div>
+
+      <div class="review">
+        “Excellent explanation of Tomcat internals and deployment strategy.”
+      </div>
+
+      <div class="review">
+        “Best course for learning real enterprise Tomcat administration.”
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section>
+  <div class="container">
+
+    <div class="cta">
+      <h2>Start Learning Apache Tomcat Today</h2>
+      <p>Build real-world deployment and DevOps skills used in enterprise environments.</p>
+
+      <a href="https://www.udemy.com/course/apache-tomcat-for-beginners-and-advanced/"
+         target="_blank">
+        Take this Course on Udemy
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  © 2026 Apache Tomcat Server from Beginners to Advanced
+</footer>
+
+</body>
+</html>
