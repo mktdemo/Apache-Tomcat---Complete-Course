@@ -1,0 +1,52 @@
+{
+  "version": "1.0.0",
+  "updatedAt": "2026-05-22",
+  "notes": "Upload this JSON to your common website and update selectors here when YouTube changes its DOM. Then update REMOTE_CONFIG_URL in content.js and host_permissions in manifest.json to your domain.",
+  "scanIntervalMs": 1800,
+  "rpm": {
+    "currencySymbol": "₹",
+    "lowInrPerThousandViews": 8,
+    "highInrPerThousandViews": 80
+  },
+  "selectors": {
+    "videoCards": [
+      "ytd-rich-item-renderer",
+      "ytd-video-renderer",
+      "ytd-compact-video-renderer",
+      "ytd-grid-video-renderer"
+    ],
+    "thumbnailTargets": [
+      "ytd-thumbnail",
+      "a#thumbnail",
+      "#thumbnail"
+    ],
+    "title": [
+      "#video-title",
+      "a#video-title",
+      "yt-formatted-string#video-title",
+      "h3 a"
+    ],
+    "metadata": [
+      "#metadata-line",
+      "ytd-video-meta-block",
+      "#metadata",
+      "yt-formatted-string"
+    ],
+    "watchPageContainer": [
+      "#below",
+      "#primary-inner",
+      "ytd-watch-flexy"
+    ],
+    "watchTitle": [
+      "h1.ytd-watch-metadata",
+      "h1.title",
+      "#title h1"
+    ],
+    "watchViews": [
+      "#info-container #info span",
+      "#info .view-count",
+      "#count .view-count",
+      "ytd-watch-info-text #info"
+    ]
+  }
+}
